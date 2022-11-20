@@ -27,6 +27,8 @@ public class InventoryController {
     public Inventory decreaseStock(@PathVariable(value = "id") Long id, @RequestBody DecreaseStockCommand decreaseStockCommand, HttpServletRequest request, HttpServletResponse response) throws Exception {
             System.out.println("##### /inventory/decreaseStock  called #####");
             Optional<Inventory> optionalInventory = inventoryRepository.findById(id);
+            // inventoryRepository.save(null);
+            // inventoryRepository.delete(null);
             
             optionalInventory.orElseThrow(()-> new Exception("No Entity Found"));
             Inventory inventory = optionalInventory.get();

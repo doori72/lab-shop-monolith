@@ -2,9 +2,7 @@ package labshopmonolith.domain;
 
 import labshopmonolith.InventoryApplication;
 import javax.persistence.*;
-import java.util.List;
 import lombok.Data;
-import java.util.Date;
 
 @Entity
 @Table(name="Inventory_table")
@@ -40,6 +38,7 @@ public class Inventory  {
 
 
     public void decreaseStock(DecreaseStockCommand decreaseStockCommand){
+        setStock(getStock() - decreaseStockCommand.getQty().longValue());
     }
 
 
