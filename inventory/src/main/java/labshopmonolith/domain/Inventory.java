@@ -33,7 +33,7 @@ public class Inventory  {
     public static InventoryRepository repository(){
         InventoryRepository inventoryRepository = InventoryApplication.applicationContext.getBean(InventoryRepository.class);
         return inventoryRepository;
-    }
+    } 
 
 
 
